@@ -14,7 +14,7 @@ class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
 
-  def search(name)
-      self.search(name).map {|s| s.name}
+  def self.search(name)
+      Student.all.search(name).map {|s| s.name}
   end
 end
