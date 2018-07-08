@@ -1,0 +1,9 @@
+<% if @students.blank? %>
+    <% = 'There are no students matching your search' %>
+<% else %>
+    <% @classroom.students.each do |i| %>
+        <ul>
+            <li><%= render partial: 'students/student', locals: {student: i} %></li>
+        </ul>
+    <% end %>
+<% end %>
